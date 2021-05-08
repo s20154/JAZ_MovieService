@@ -13,5 +13,16 @@ public class MovieService {
 
         return List.of(m1, m2, m3);
     }
+    public void save(MovieModel movieModel){
+
+    }
+
+    public void update(MovieModel movieModel){
+
+    }
+
+    public void delete(MovieModel movieModel){
+
+    }
 
 }

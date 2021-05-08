@@ -1,10 +1,7 @@
 package com.example.MovieService;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,4 +25,21 @@ public class MovieController {
         List<MovieModel> movies = movieService.getAllMovies();
         return ResponseEntity.ok(movies.get(id.intValue()-1));
     }
+
+    @PostMapping
+    public ResponseEntity<MovieModel> addOne(@RequestBody MovieModel movieModel){
+        return ResponseEntity.ok(movieService.save(movieModel));
+    }
+
+    @PutMapping
+    public ResponseEntity<MovieModel> updateOne(@RequestBody MovieModel movieModel){
+        return ResponseEntity.ok(movieService.update(movieModel));
+    }
+
+    @DeleteMapping Mapping
+    public ResponseEntity<MovieModel> updateOne(@RequestBody MovieModel movieModel){
+        return ResponseEntity.ok(movieService.delete(movieModel));
+    }
+
+
 }
